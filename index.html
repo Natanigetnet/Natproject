@@ -11,7 +11,7 @@
       .active-section { display: block; }
     </style>
   </head>
-<body class="p-4" style="background: url('https://wallpapers.com/images/hd/spotify-wispy-smoke-9gvjvxhb0ygkcgdr.jpg') no-repeat center center fixed; background-size: cover; color: white;">
+<body class="p-4" style="background: url('https://th.bing.com/th/id/OIF.ErDpapoPwBN9S7nExD1XYg?w=309&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7') no-repeat center center fixed; background-size: cover; color: white;">
     <nav class="navbar navbar-expand-lg navbar-dark bg-grey mb-4">
       <div class="container-fluid">
         <a class="navbar-brand" href="#" style="font-size: 1.8rem; color: green;"><strong>Spotify Lite</strong></a>
@@ -29,7 +29,7 @@
       <div id="search" class="page-section active-section">
         <div class="mb-4">
           <div class="input-group input-group-sm justify-content-end">
-            <strong><input type="text" id="searchInput" style="background-color:gray" class="form-control form-control-sm w-10" placeholder="Search for song "></strong>
+            <strong><input type="text" id="searchInput" style="background-color:rgb(230, 221, 221)" class="form-control form-control-sm w-10" placeholder="Search for song "></strong>
             <button class="btn btn-primary " style="background-color: green;" onclick="searchSongs()"><strong>Search</strong></button>
           </div>
         </div>
@@ -39,7 +39,7 @@
       <div id="playlist" class="page-section">
         <h5>Playlist</h5>
         <div class="table-responsive">
-          <input class="form-control mb-2" id="searchPlaylistInput" placeholder="Search songs in playlist" style="background-color: gray;">
+          <input class=" mb-2" id="searchPlaylistInput" placeholder="Search songs in playlist" style="background-color: gray;">
           <table class="table table-striped table-dark table-hover" style="background-color: rgba(40, 40, 40, 0.6);">
             <thead>
               <tr>
@@ -56,7 +56,10 @@
 
       <div id="analytics" class="page-section">
         <h5>Songs Per Artist Chart</h5>
-        <canvas id="songChart" width="400" height="250"></canvas>
+        <div class="d-flex justify-content-center">
+         <canvas id="songChart" style="width: 600px;height: 800px;"></canvas>
+
+        </div>
         <button class="btn btn-secondary mt-2" onclick="toggleChartType()">Toggle Chart</button>
       </div>
     </div>
@@ -173,7 +176,7 @@
             }]
           },
           options: {
-            responsive: true,
+            responsive: false,
             plugins: { legend: { display: chartType === 'pie' } },
             scales: chartType === 'bar' ? {
               y: {
